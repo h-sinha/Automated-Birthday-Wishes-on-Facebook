@@ -1,2 +1,2 @@
 # Automated-Birthday-Wishes-on-Facebook
-won't work for 2 factor authentication
+pause for 30 sec for 2 factor auth
