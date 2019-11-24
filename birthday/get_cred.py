@@ -1,0 +1,7 @@
+username = input("Enter email/phone = ")
+password = input("Enter password = ")
+message = input("Enter message to post = ")
+f = open("credentials.txt","w+")
+f.write(username + "\n")
+f.write(password + "\n")
+f.write(message)

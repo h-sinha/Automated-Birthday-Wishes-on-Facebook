@@ -4,11 +4,12 @@ import time
 options = webdriver.ChromeOptions()
 prefs = {"profile.default_content_setting_values.notifications" : 2}
 options.add_experimental_option("prefs",prefs)
+# options.add_argument("--headless")  
 driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver",chrome_options=options)
 driver.get('https://www.facebook.com')
 # driver = webdriver.Chrome()
 
-
+message = "Happy Birthday!!!"
 username = "harsh.sinha@students.iiit.ac.in"
 with open('pass', 'r') as myfile: 
 	password = myfile.read().replace('\n', '') 
@@ -28,10 +29,12 @@ login = driver.find_elements_by_xpath("//input[@value='Log In']")[0]
 login.click()
 driver.get('https://www.facebook.com/events/birthdays/') 
 
-
+#get all the text boxes
 text_boxes = driver.find_elements_by_xpath("//*[@class ='enter_submit uiTextareaNoResize uiTextareaAutogrow uiStreamInlineTextarea inlineReplyTextArea mentionsTextarea textInput']") 
+# iterate over text boxes and write message
 for text_box_element in text_boxes:
 	eid = str(text_box_element.get_attribute('id')) 
 	text_box = driver.find_element_by_xpath('//*[@id ="' + eid + '"]') 
-	text_box.send_keys("Happy Birthday!!!")
+	text_box.send_keys(message)
+	text_box.send_keys(Keys.RETURN) 
 
