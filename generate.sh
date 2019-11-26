@@ -1,4 +1,4 @@
-# python3 get_cred.py
+python3 get_cred.py
 read -p "Enter time in format Hour:Min = " time
 IFS=':' read -ra time_array <<< "$time"
 min=${time_array[1]} 
@@ -14,3 +14,4 @@ crontab -l > mycron
 echo $cronjob >> mycron
 crontab mycron
 rm mycron
+echo "Done"
