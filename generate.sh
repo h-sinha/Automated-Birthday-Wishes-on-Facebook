@@ -9,7 +9,7 @@ cronjob+="export DISPLAY=:0.0 && cd "
 cronjob+=`pwd`
 cronjob+=" && "
 cronjob+=`which python3`
-cronjob+=" main.py >> outputlog.txt"
+cronjob+=" main.py"
 crontab -l > mycron
 echo $cronjob >> mycron
 crontab mycron
