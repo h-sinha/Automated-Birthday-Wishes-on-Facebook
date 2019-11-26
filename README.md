@@ -2,7 +2,7 @@
 Automatically posts birthday wishes on friend's FB wall. Creates a cronjob to post wishes everyday. Uses selenium for accessing Facebook. **For using this script disable 2 factor authentication on facebook**. 
 # Requirements
 * selenium wedriver
-# Instruction 
+# Instructions
 * Run the bash script generate.sh using 
 ```
 bash generate.sh
