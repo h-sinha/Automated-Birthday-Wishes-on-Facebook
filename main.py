@@ -28,6 +28,10 @@ def post(username, password, message):
 	# select login button
 	login = driver.find_elements_by_xpath("//input[@value='Log In']")[0]
 	login.click()
+
+	# waits for 35 sec for 2 factor authentication
+	time.sleep(35)
+
 	driver.get('https://www.facebook.com/events/birthdays/') 
 
 	#get all the text boxes
